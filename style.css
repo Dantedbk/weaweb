@@ -1,0 +1,62 @@
+
+.dropdown-menu a{
+  color: rgb(71, 71, 40) !important;
+  
+}
+body {
+  background: url("https://lh3.googleusercontent.com/pw/AM-JKLUqkc-5_4LR4_rYpuOeGwIyvyb6V9s-7K0DYGHQqfah3LYo2bSA_j23rG5GJ7li6M2HdtPZhWRwtHUMg3WutELDkRFb9R6py2zLZ4G3AWpBKQRHDDMhND7UCCdAcAJDbooRsSen1gUqP7yU5pG6lPtf=w924-h577-no?authuser=0" ) no-repeat center fixed ;
+  background-size:cover;
+}
+
+.navbar-nav a{
+    color: rgb(0, 0, 0) !important;
+    font-size:large;
+    font-weight: 400;
+  }
+
+  .btn {
+    position: relative;
+    width: auto;
+    border: 1px solid rgba(142, 216, 38, 0.768);
+    background-color: rgba(96, 150, 10, 0.407);
+    line-height: 0.9;
+    letter-spacing: -0.5px;
+    text-align:center;
+    color: black;
+    padding: 0px;
+    cursor: pointer;
+    border-radius: 5%;
+    margin: 4px;
+    opacity: 0.8;
+  }   
+
+  .btn2 {
+    position: relative;
+    width: auto;
+    border: 1px solid rgba(76, 162, 30, 0.574);
+    background-color: rgba(142, 203, 11, 0.527);
+    line-height: 0.9;
+    letter-spacing: -0.5px;
+    text-align:center;
+    color: rgb(243, 255, 12);
+    padding: 0px;
+    cursor: pointer;
+    border-radius: 5%;
+    margin: 4px;
+    opacity: 0.8;
+  }   
+  
+  .bg-success {
+    background-color:rgb(0, 0, 0);
+  }
+
+
+  .btn:hover {
+    background-color: #b2ff4e49;
+    color:rgb(0, 0, 0);
+  }
+
+  .navbar-toggler {
+    background-color:rgba(83, 185, 55, 0.318)
+  }
+
