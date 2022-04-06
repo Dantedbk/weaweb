@@ -10,43 +10,59 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/472d8f83ca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
   <title>GreenPlants</title>
 
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-light ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="adfad">
-        <img
-          src="https://lh3.googleusercontent.com/pw/AM-JKLXFP6wUh98HioMYyR6tVMkpSFCbzKOQJGF2TsQFa9bBKjK-PeEaNNZAfQ9zMk2yG7YVQJiT-kAJYRwDq-WrkCvwaihTf3Y_3HKItMIQ6Y1DZbvT9BopYWuEj9Oif2bMF4A_cOFBr8YpXcTKt4mv_H4Q=s64-no?authuser=0"
-          width="40" height="40" alt="">
-        GreenPlants
-      </a>
+
+    <div class="container-fluid p-3 py-0">
+
+      <div class="d-flex flex-column">
+        <li class="nav-item ">
+          <a class="navbar-brand mt-0" href="#">
+            <img
+              src="https://lh3.googleusercontent.com/pw/AM-JKLXFP6wUh98HioMYyR6tVMkpSFCbzKOQJGF2TsQFa9bBKjK-PeEaNNZAfQ9zMk2yG7YVQJiT-kAJYRwDq-WrkCvwaihTf3Y_3HKItMIQ6Y1DZbvT9BopYWuEj9Oif2bMF4A_cOFBr8YpXcTKt4mv_H4Q=s64-no?authuser=0"
+              width="50" height="50" alt="">
+            GreenPlants
+          </a>
+        </li>
+        <li class="nav-item"><br> </li>
+      </div>
+
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
         <ul class="navbar-nav ms-auto">
-
-          <li class="nav-item btn btn2">
-            <a class="nav-link" href="#">Registrate </a>
-          </li>
-          <li class="nav-item btn ">
-            <a class="nav-link" href="#">Ingreso Usuarios</a>
+          <li class="nav-item">
+          <li class="nav-item btn">
+            <div class="bi bi-bucket mt-1" style="font-size: 40px; "> </div>
+            <a class="nav-link" href="catalogo.html">Catalogo</a>
           </li>
 
+          </li>
+          <div class="d-flex flex-column">
+            <li class="nav-item btn ">
+              <a class="nav-link" href="#">Ingreso Usuarios</a>
+            </li>
+            <li class="nav-item btn btn2">
+              <a class="nav-link" href="registro.html">Registrate </a>
+            </li>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
 
-  <section class="text-light p-5">
-    <div class="container">
+  <section class="text-light">
+    <div class="container ">
       <div class="d-sm-flex align-items-center">
         <div class="container">
           <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -137,8 +153,8 @@
                   </div>
                 </div>
               </div>
-              
-                <button class="carousel-control-prev  " type="button" data-bs-target="#carouselExampleDark"
+
+              <button class="carousel-control-prev  " type="button" data-bs-target="#carouselExampleDark"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -148,7 +164,6 @@
                 <span class="carousel-control-next-icon " aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
-
 
             </div>
           </div>
