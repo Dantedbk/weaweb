@@ -61,24 +61,26 @@
     </div>
   </nav>
 
-  <div class="row mb-5">
+  <div class="col-md-2 offset-md-2 pb-5">
     <div class="text-center">
-        <h3>Ingreso de personas</h3>
+        <h3>Registro clientes</h3>
     </div>        
 </div>
+
+
 <div class="row mb-2">
     <div class="col-md-2 offset-md-2">
         Rut        
     </div>
     <div class="col-10 col-md-5">
         <input type="text" name="txtRut" 
-        class="txtRut form-control" style="background-color: rgba(114, 194, 67, 0.514);" 
+        class="txtRut form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
         maxlength="8" placeholder="Ej: 12345678" 
         title="Ingrese el nro de rut">
     </div>
     <div class="col-2 col-md-1">
         <input type="text" name="txtDv" 
-        class="txtDv form-control" style="background-color: rgba(114, 194, 67, 0.514);" 
+        class="txtDv form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
         maxlength="1" placeholder="Ej: K" 
         title="Ingrese el Digito verificador del rut">
     </div>
@@ -89,7 +91,7 @@
     </div>
     <div class="col-md-6">
         <input type="text" name="txtNombre" 
-        class="txtNombre form-control" style="background-color: rgba(114, 194, 67, 0.514);" 
+        class="txtNombre form-control" style="background-color: rgba(121, 210, 69, 0.118);"  
         maxlength="50" placeholder="Ej: Juan" 
         title="Ingrese su nombre">
     </div>
@@ -100,10 +102,21 @@
     </div>
     <div class="col-md-6">
         <input type="text" name="txtApellido" 
-        class="txtApellido form-control" style="background-color: rgba(114, 194, 67, 0.514);" 
+        class="txtApellido form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
         maxlength="50" placeholder="Ej: Fernandez" 
         title="Ingrese su apellido">
     </div>
+</div>
+<div class="row mb-2">
+  <div class="col-md-2 offset-md-2">
+      Correo electronico        
+  </div>
+  <div class="col-md-6">
+      <input type="text" name="txtCorreo" 
+      class="txtCorreo form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
+      maxlength="50" placeholder="Ej: juan_f@**mail.com" 
+      title="Ingrese su correo electronico/mail">
+  </div>
 </div>
 <div class="row mb-2">
     <div class="col-12 col-md-2 offset-md-2">
@@ -111,7 +124,7 @@
     </div>
     <div class="col-12 col-md-6">
         <input type="date" name="txtNacimiento" 
-        class="txtNacimiento form-control" style="background-color: rgba(114, 194, 67, 0.514);"  
+        class="txtNacimiento form-control" style="background-color: rgba(121, 210, 69, 0.118);"  
         title="Ingrese la fecha de nacimiento">
     </div>
 </div>
@@ -122,10 +135,10 @@
 </div>
 <div class="col-md-6">
   <input type="submit" name="btnLimpiar" 
-  class="btnLimpiar btn btn-outline-secondary float-end"
+  class="btnLimpiar btn btn-outline-secondary float-end" style="border-color: rgba(48, 83, 8, 0.821);"
   title="Limpia el formulario de información que este escrita" value="Limpiar">
-  <button type="button" class="btn float-end mx-2">Listar</button>
-  <button type="button" class="btn float-end">Grabar</button>
+  <button type="button" class="btn float-end mx-2" style="border-color: rgba(48, 83, 8, 0.821);">Listar</button>
+  <button type="button" class="btn float-end" style="border-color: rgba(48, 83, 8, 0.821);">Grabar</button>
 </div>
 </div>
 
