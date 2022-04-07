@@ -23,7 +23,7 @@
 
       <div class="d-flex flex-column">
         <li class="nav-item ">
-          <a class="navbar-brand mt-0" href="#">
+          <a class="navbar-brand mt-0" href="home.html">
             <img
               src="https://lh3.googleusercontent.com/pw/AM-JKLXFP6wUh98HioMYyR6tVMkpSFCbzKOQJGF2TsQFa9bBKjK-PeEaNNZAfQ9zMk2yG7YVQJiT-kAJYRwDq-WrkCvwaihTf3Y_3HKItMIQ6Y1DZbvT9BopYWuEj9Oif2bMF4A_cOFBr8YpXcTKt4mv_H4Q=s64-no?authuser=0"
               width="50" height="50" alt="">
@@ -32,7 +32,7 @@
         </li>
         <li class="nav-item"><br> </li>
       </div>
-
+      
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,17 +46,100 @@
             <div class="bi bi-bucket mt-1" style="font-size: 40px; "> </div>
             <a class="nav-link" href="catalogo.html">Catalogo</a>
           </li>
-
+          
           </li>
           <div class="d-flex flex-column">
-            <li class="nav-item btn ">
-              <a class="nav-link" href="#">Ingreso Usuarios</a>
-            </li>
             <li class="nav-item btn btn2">
               <a class="nav-link" href="registro.html">Registrate </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle  mx-1 p-1 btn"  href="#" id="navbarDropleft" role="button" data-bs-toggle="dropdown" 
+              aria-expanded="false" style="width:135px">
+                Ingresar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <div class="col-md-11 p-1">
+                  <input type="text" name="txtCorreo" 
+                  class="txtCorreo form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
+                  maxlength="50" placeholder="Id. Usuario:" 
+                  title="Ingrese su correo electronico/mail">
+              </div>
+              <div class="col-md-11 p-1">
+                <input type="text" name="txtCorreo" 
+                class="txtCorreo form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
+                maxlength="50" placeholder="Contraseña:" 
+                title="Ingrese su correo electronico/mail">
+            </div>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item btn style="width:50%" href="producto.html">Entrar</a></li>
+              </ul>
             </li>
           </div>
         </ul>
       </div>
     </div>
   </nav>
+
+  <div class="row g-1">
+    <div class="col-md">
+      <div class="text-light ">
+        <div class="card-body mb-5 ">
+          <div class=" h1 mb-3 ">
+            <img src="img/cactus-furniture-nature-15-svgrepo-com.svg" class=" w-50 mx-auto my-auto d-block" 
+            style="border: 5px solid rgba(80, 111, 32, 0.51); background-color: rgba(43, 67, 19, 0.132);" alt="...">
+            <div class="text-center">
+              <a href="#" class="btn" style="width:50% ;border-color: black;">Pedir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button>c:</button>
+    </div>
+    <div class="col-md">
+      <div class="text-dark">
+        <H1 class="mb-3">Sahuaro</H1>
+        <div class="accordion  w-75" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button " data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Descripcion
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Carnegiea gigantea: </strong><br> De crecimiento extremadamente lento —1 m al cabo de veinticinco años,
+                pueden llegar a alcanzar los 16 o 18 m de altura, El tronco puede alcanzar un diámetro de hasta 75 cm, 
+                son de color pardo y se van volviendo grises a medida que la planta envejece.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Distribucion y habitat
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Estados Unidos, Sonora</strong><br> Resisten grandes diferencias térmicas, propias de los desiertos: temperaturas mínimas de -9 °C. hasta superiores a los 50 °C.
+                La polinización cruzada entre diferentes ejemplares es llevada a cabo, en el biotopo, por abejas, algunas aves y una especie de murciélago (Leptonycteris).
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Cuidados
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>agua</strong><br>  c:
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</body>
