@@ -18,9 +18,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
-
     <div class="container-fluid p-3 py-0">
-
       <div class="d-flex flex-column">
         <li class="nav-item ">
           <a class="navbar-brand mt-0" href="home.html">
@@ -38,28 +36,44 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-          <li class="nav-item btn">
+          <li class=" nav-item btn">
             <div class="bi bi-bucket mt-1" style="font-size: 40px; "> </div>
-            <a class="nav-link" href="catalogo.html">Catalogo</a>
-          </li>
-
+            <a class="nav-link stretched-link" href="catalogo.html ">Catalogo</a>
+            </li>
           </li>
           <div class="d-flex flex-column">
-            <li class="nav-item btn ">
-              <a class="nav-link" href="#">Ingreso Usuarios</a>
-            </li>
             <li class="nav-item btn btn2">
               <a class="nav-link" href="registro.html">Registrate </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle mx-1 p-1 btn"  href="#" id="navbarDropleft" role="button" data-bs-toggle="dropdown" 
+              aria-expanded="false" style="width:135px">
+                Ingresar
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <div class="col-md-11 p-1">
+                  <input type="text" name="txtCorreo" 
+                  class="txtCorreo form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
+                  maxlength="50" placeholder="Id. Usuario:" 
+                  title="Ingrese su correo electronico/mail">
+              </div>
+              <div class="col-md-11 p-1">
+                <input type="text" name="txtCorreo" 
+                class="txtCorreo form-control" style="background-color: rgba(121, 210, 69, 0.118);" 
+                maxlength="50" placeholder="Contraseña:" 
+                title="Ingrese su correo electronico/mail">
+              </div>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item btn offset-2" style="width:90px" href="#">Entrar</a></li>
+              </ul>
             </li>
           </div>
         </ul>
       </div>
     </div>
   </nav>
-
   <div class="col-md-2 offset-md-2 pb-5">
     <div class="text-center">
         <h3>Registro clientes</h3>
