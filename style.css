@@ -14,6 +14,22 @@ h3{
     font-weight: 400;
   }
 
+.dropdown-menu.show{
+  border: 1px solid rgba(142, 216, 38, 0.44);
+  background-color: rgba(96, 150, 10, 0.407);
+}
+.accordion-item{
+  background-color: rgba(0, 0, 0, 0);
+}
+.accordion-button{
+  background-color: rgba(0, 0, 0, 0);
+}
+.accordion-button:not(.collapsed){
+  border: 1px solid rgba(142, 216, 38, 0.44);
+  background-color: rgba(96, 150, 10, 0.407);
+  color:black
+}
+
   .nav-item.btn {
     position: relative ;
     width: auto;
@@ -35,25 +51,19 @@ h3{
     background-color: rgba(96, 150, 10, 0.407);
   }
 
-  .btn2 {
-    position: relative;
+  .tipo1 {
     width: auto;
     border: 1px solid rgba(76, 162, 30, 0.574);
-    background-color: rgba(142, 203, 11, 0.527);
-    line-height: 0.9;
-    letter-spacing: -0.5px;
-    text-align:center;
-    color: rgb(243, 255, 12);
-    padding: 0px;
-    cursor: pointer;
-    border-radius: 5%;
-    margin: 4px;
+    background-color: rgba(127, 186, 31, 0.407);
+    line-height: 1.15;
+    padding: 5px;
     opacity: 0.8;
   }   
-  
-  .bg-success {
-    background-color:rgb(111, 212, 3);
-  }
+  .tipo1:hover:not(:focus){
+    box-shadow: 0px 0px 10px 3px rgba(155, 215, 14, 0.436);
+    background-color: rgba(142, 203, 11, 0.527);
+    
+ }
 
 
   .btn:hover {
@@ -87,9 +97,19 @@ h3{
     list-style-type:none;
   }
 
+  .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(0, 0, 0, 0.649);
+    font-style: italic;
+  }
+  
   .form-control{
     background-color: rgba(76, 162, 30, 0.747); 
     border-color: rgba(43, 58, 11, 0.718);
+    color:black
+  }
+  .form-control.placeholder{
+    color:black !important;
+    
   }
   
   .form-control:hover:not(:focus){
