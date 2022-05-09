@@ -13,9 +13,79 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
   <title>GreenPlants</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+  <script>
+    $(function () // public static void main (JAVa)
+    {
+      $(".flagf").click(function () {
+        let nombre = $(".txtNombre").val();
+        if (!nombre) {
+          alert("Debe especificar el nombre");
+          $(".txtNombre").focus();
+        }
+      });
+      $(".flagf").click(function () {
+        let rut = $(".txtRut").val();
+        if (!rut) {
+          alert("Debe especificar el rut");
+          $(".txRut").focus();
+        } else if(rut.length < 7){
+          alert("rut invalido")
+        }
+      });
+      $(".flagf").click(function () {
+        let contr = $(".txtContrasenna").val();
+        if (!contr) {
+          alert("Debe especificar la contraseña");
+          $(".txtContrasenna").focus();
+        }
+      });
+      $(".flagf").click(function () {
+        let dir = $(".txtDireccion").val();
+        if (!dir) {
+          alert("Debe especificar una dirección");
+          $(".txtDireccion").focus();
+        }
+      });
+      
+      $(".flagf").click(function () {
+        let fecnac = $(".txtNacimiento").val();
+        if (!fecnac) {
+          alert("Debe especificar su fecha de nacimiento ");
+          $(".txtNacimiento").focus();
+        }
+      });
+      var caracteres = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      $(".flagf").click(function () {
+        var rut = document.getElementById("txtCorreo").value;
+        if (!caracteres.test(rut)){
+        alert('Correo invalido\nFormato: xxxx@xxx.xx')
+        }
+      });
+
+      let letras = 'qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM ÁÉÍÓÚáéíóú';
+      $(".formLetras").keypress(function (e) {
+        let caracter = String.fromCharCode(e.which);
+        if (letras.indexOf(caracter) < 0)
+          return false;
+      })
+      let numeros = '0123456789';
+      $(".txtRut").keypress(function (e) {
+        let caracter = String.fromCharCode(e.which);
+        if (numeros.indexOf(caracter) < 0)
+          return false;
+      })
+      let dv = '0123456789Kk';
+      $(".txtDV").keypress(function (e) {
+        let caracter = String.fromCharCode(e.which);
+        if (dv.indexOf(caracter) < 0)
+          return false;
+      })
+    });
+  </script>
 </head>
-
+btn
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid p-3 py-0">
@@ -38,18 +108,18 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-          <li class=" nav-item btn">
+          <li class=" nav-item btn tipo1">
             <div class="bi bi-bucket mt-1" style="font-size: 40px; "> </div>
-            <a class="nav-link stretched-link" href="catalogo.html ">Catalogo</a>
+            <a class="nav-link stretched-link"style="width:100px;height:28px" href="catalogo.html ">Catalogo</a>
           </li>
           </li>
           <div class="d-flex flex-column">
-            <li class="nav-item btn btn2">
+            <li class="nav-item btn tipo1">
               <a class="nav-link" href="registro.html">Registrate </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="dropdown-toggle mx-1 p-1 btn" href="#" id="navbarDropleft" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false" style="width:135px">
+              <a class="dropdown-toggle mx-1 p-1 btn tipo1" href="#" id="navbarDropleft" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false" style="width:135px;height:35px">
                 Ingresar
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -74,81 +144,209 @@
       </div>
     </div>
   </nav>
-  <div class="col-md-2 offset-md-2 pb-5">
+  <div class="col-md-5 mb-4">
     <div class="text-center">
-      <h3>Registro clientes</h3>
+      <h3>Registro Clientes</h3>
     </div>
   </div>
 
-  <div class="mx-5">
-    <div class="row mb-2">
-      <div class="col-md-2 offset-md-2">
-        Rut
-      </div>
-      <div class="col-10 col-md-5">
-        <input type="text" name="txtRut" class="txtRut form-control"
-          style="background-color: rgba(121, 210, 69, 0.118);" maxlength="8" placeholder="Ej: 12345678"
-          title="Ingrese el nro de rut">
-      </div>
-      <div class="col-2 col-md-1">
-        <input type="text" name="txtDv" class="txtDv form-control" style="background-color: rgba(121, 210, 69, 0.118);"
-          maxlength="1" placeholder="Ej: K" title="Ingrese el Digito verificador del rut">
-      </div>
-    </div>
-    <div class="row mb-2">
-      <div class="col-md-2 offset-md-2">
-        Nombre
-      </div>
-      <div class="col-md-6">
-        <input type="text" name="txtNombre" class="txtNombre form-control"
-          style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: Juan"
-          title="Ingrese su nombre">
-      </div>
-    </div>
-    <div class="row mb-2">
-      <div class="col-md-2 offset-md-2">
-        Apellido
-      </div>
-      <div class="col-md-6">
-        <input type="text" name="txtApellido" class="txtApellido form-control"
-          style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: Fernandez"
-          title="Ingrese su apellido">
-      </div>
-    </div>
-    <div class="row mb-2">
-      <div class="col-md-2 offset-md-2">
-        Correo electronico
-      </div>
-      <div class="col-md-6">
-        <input type="text" name="txtCorreo" class="txtCorreo form-control"
-          style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: juan_f@**mail.com"
-          title="Ingrese su correo electronico/mail">
-      </div>
-    </div>
-    <div class="row mb-2">
-      <div class="col-12 col-md-2 offset-md-2">
-        Nacimiento
-      </div>
-      <div class="col-12 col-md-6">
-        <input type="date" name="txtNacimiento" class="txtNacimiento form-control"
-          style="background-color: rgba(121, 210, 69, 0.118);" title="Ingrese la fecha de nacimiento">
-      </div>
-    </div>
-
+  <div class="container ">
     <div class="row">
-      <div class="col-md-2 offset-md-2">
-        Opciones
+      <div class="col-sm ">
+      <div class="row mb-2 ">
+        <div class="col-md-2 offset-md-2 px-1">
+          Rut
+        </div>
+        <div class="col-md-5 " >
+          <input type="text" name="txtRut" class="txtRut form-control"
+            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="8" placeholder="Ej: 12345678"
+            title="Ingrese el nro de rut">
+        </div>
+        <div class="col-md-2 mx-0 ">
+          <input type="text" name="txtDV" class="txtDV form-control" style="background-color: rgba(121, 210, 69, 0.118);"
+            maxlength="1" placeholder="Dv" title="Ingrese el Digito verificador del rut">
+        </div>
       </div>
-      <div class="col-md-6">
-        <input type="submit" name="btnLimpiar" class="btnLimpiar btn btn-outline-secondary float-end tipo1"
-          style="border-color: rgba(48, 83, 8, 0.821);" title="Limpia el formulario de información que este escrita"
-          value="Limpiar">
-        <button type="button" class="btn float-end mx-2 tipo1"
-          style="border-color: rgba(48, 83, 8, 0.821);">Listar</button>
-        <button type="button" class="btn float-end tipo1" style="border-color: rgba(48, 83, 8, 0.821);">Grabar</button>
+      <div class="row mb-2">
+        <div class="col-md-2 offset-md-2 px-1">
+          Nombre
+        </div>
+        <div class="col-md-7">
+          <input type="text" name="txtNombre" class="txtNombre form-control formLetras"
+            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: Juan"
+            title="Ingrese su nombre">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-2 offset-md-2 px-1">
+          Apellido
+        </div>
+        <div class="col-md-7">
+          <input type="text" name="txtApellido " class="txtApellido form-control formLetras"
+            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: Fernandez"
+            title="Ingrese su apellido">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-2 offset-md-2 px-1">
+          Correo
+        </div>
+        <div class="col-md-7">
+          <input type="text" name="txtCorreo" id="txtCorreo" class="txtCorreo form-control"
+            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: juan_f@**mail.com"
+            title="Ingrese su correo electronico/mail">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-2 offset-md-2 px-1">
+          Contraseña
+        </div>
+        <div class="col-md-7">
+          <input type="text" name="txtContrasenna" id="txtContrasenna" class="txtContrasenna form-control"
+            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="10" placeholder="Maximo 12 caracteres"
+            title="Cree una contraseña, minimo 7 caracteres">
+        </div>
+      </div>
+      <div class="row mb-2 ">
+        <div class="col-md-2 offset-md-2 px-1">
+          Direccion
+        </div>
+        <div class="col-md-5 " >
+          <input type="text" name="txtDireccion" class="txtDireccion form-control"
+            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="8" placeholder="Ej: la planta"
+            title="Ingrese su direccion">
+        </div>
+        <div class="col-md-2 mx-0 ">
+          <input type="text" name="txtNDireccion" class="txtNDireccion form-control txtRut" style="background-color: rgba(121, 210, 69, 0.118);"
+            maxlength="6" placeholder=": Nro" title="Ingrese el numero de domicilio">
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-12 col-md-2 offset-md-2 px-1">
+          Nacimiento
+        </div>
+        <div class="col-12 col-md-7">
+          <input type="date" name="txtNacimiento" class="txtNacimiento form-control"
+            style="background-color: rgba(121, 210, 69, 0.118);" title="Ingrese la fecha de nacimiento">
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-2 offset-md-2 px-1">
+          Opciones
+        </div>
+        <div class="col-md-6">
+          <input type="submit" name="btnLimpiar" class="btnLimpiar btn btn-outline-secondary float-end tipo1"
+            style="border-color: rgba(48, 83, 8, 0.821);" title="Limpia el formulario de información que este escrita"
+            value="Limpiar">
+          <button type="button" class="btn float-end mx-2 tipo1"
+            style="border-color: rgba(48, 83, 8, 0.821);">Listar</button>
+          <button type="button" class="btn float-end tipo1 flagf" style="border-color: rgba(48, 83, 8, 0.821);">Grabar</button>
+        </div>
+    </div>
+
+
+
+    
+    </div>
+      <div class="col-sm">
+        <div class="accordion  w-75" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button " data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <b style="font-size:large;color:rgba(0, 0, 0, 0.701)">Apoyanos</b> 
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Por qué donar: </strong><br> GreenPlants es una organizdacion sin fines de lucro, dependemos de aportes voluntarios
+                para continuar nuestra labor de apoyo, también, recibirás un 5% de descuento en tus compras.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <b style="font-size:large;color:rgba(0, 0, 0, 0.701)">Aportar </b> 
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>Ingresa el monto</strong><br>
+                 Este será descontado en mensual, mientras la suscripcion esté activa: .<br><br>
+                <select class="form-select form-select-xs mb-3 w-50 tipo1" aria-label=".form-select-lg example">
+                  <option selected>Monto</option>
+                  <option value="1">$1.000</option>
+                  <option value="2">$5.000</option>
+                  <option value="3">$10.000</option>
+                </select>
+              <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off">
+                <label class="btn btn-outline-success tipo1" for="btn-check-outlined"> <h>Suscribirse</h> </label><br>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <b style="font-size:large;color:rgba(0, 0, 0, 0.701)">Informacion Tarjeta</b> 
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body px-0 ">
+
+                <div class="container px-0">
+                  <div class="row">
+                    <div class="col-sm ">
+                    <div class="row mb-1">
+                      <div class="row mb-1">
+                        <div class="col-md-2 offset-md-1 px-1">
+                          Tipo: 
+                        </div>
+                        <div class="col-md-7">
+                          <select class="form-select form-select-xs mb-1 mx-1 w-75 tipo1" aria-label=".form-select-lg example">
+                            <option selected>Tipo tarjeta</option>
+                            <option value="1">Crédito</option>
+                            <option value="2">Débito</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-2 offset-md-1 px-1">
+                        N°Tarjeta
+                      </div>
+                      <div class="col-md-7 " >
+                        <input type="text" name="txtRut" class="txtRut form-control"
+                          style="background-color: rgba(121, 210, 69, 0.118);" maxlength="8" placeholder="Ej: 1234-5678-9101-1213"
+                          title="Ingrese el nro de rut">
+                      </div>
+                    </div>
+                    <div class="row mb-1">
+                      <div class="col-12 col-md-2 offset-md-1 px-1">
+                        Venc.
+                      </div>
+                      <div class="col-12 col-md-7 w-50">
+                        <input type="date" name="txtVencimiento" class="txtVencimiento form-control"
+                          style="background-color: rgba(121, 210, 69, 0.118);" title="Ingrese la fecha de vencimiento">
+                      </div>
+                    </div>
+                    <div class="row mb-1">
+                      <div class="col-md-2 offset-md-1 px-1">
+                        CVV
+                      </div>
+                      <div class="col-md-3">
+                        <input type="text" name="txtCVV " class="txtCVV form-control"
+                          style="background-color: rgba(121, 210, 69, 0.118);" maxlength="50" placeholder="Ej: 123"
+                          title="Ingrese su cvv">
+                      </div>
+                    </div>
+
+
+
+              </div>
+            </div>
+          </div>
       </div>
     </div>
-  </div>
   </div>
 </body>
 
