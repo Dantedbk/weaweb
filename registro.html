@@ -18,52 +18,40 @@
   <script>
     $(function () // public static void main (JAVa)
     {
-      $(".flagf").click(function () {
-        let nombre = $(".txtNombre").val();
-        if (!nombre) {
-          alert("Debe especificar el nombre");
-          $(".txtNombre").focus();
-        }
-      });
-      $(".flagf").click(function () {
-        let rut = $(".txtRut").val();
-        if (!rut) {
-          alert("Debe especificar el rut");
-          $(".txRut").focus();
-        } else if(rut.length < 7){
-          alert("rut invalido")
-        }
-      });
-      $(".flagf").click(function () {
-        let contr = $(".txtContrasenna").val();
-        if (!contr) {
-          alert("Debe especificar la contraseña");
-          $(".txtContrasenna").focus();
-        }
-      });
-      $(".flagf").click(function () {
-        let dir = $(".txtDireccion").val();
-        if (!dir) {
-          alert("Debe especificar una dirección");
-          $(".txtDireccion").focus();
-        }
-      });
+      let temp = '';
       
       $(".flagf").click(function () {
-        let fecnac = $(".txtNacimiento").val();
-        if (!fecnac) {
-          alert("Debe especificar su fecha de nacimiento ");
-          $(".txtNacimiento").focus();
-        }
-      });
-      var caracteres = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      $(".flagf").click(function () {
-        var rut = document.getElementById("txtCorreo").value;
-        if (!caracteres.test(rut)){
-        alert('Correo invalido\nFormato: xxxx@xxx.xx')
-        }
-      });
+        let correo = document.getElementById("txtCorreo").value;
+        let caracteres = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+        if (!$(".txtRut").val() || $(".txtRut").val().length < 7 || !$(".txtDV").val()) {
+          temp += 'rut, ';  
+          $(".txtRut").focus();
+        }
+        if (!$(".txtNombre").val()) {
+          temp += 'nombre, ';
+        }
+        if (!$(".txtApellido").val()) {
+          temp += 'apellidos, ';
+        }
+        if (!caracteres.test(correo)){
+        temp += 'correo electronico, '
+        }
+        if (!$(".txtContrasenna").val()) {
+          temp += 'contraseña, ';
+        }
+        if (!$(".txtDireccion").val()) {
+          temp += 'direccion, ';
+        }
+        if (!$(".txtNacimiento").val()) {
+          temp += 'fecha cumpleaños ';     
+        }
+
+        if (temp != '') {
+          alert('los siguientes campos son invalidos:\n' + temp)
+          temp = '';     
+        }
+      });
       let letras = 'qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM ÁÉÍÓÚáéíóú';
       $(".formLetras").keypress(function (e) {
         let caracter = String.fromCharCode(e.which);
@@ -85,7 +73,7 @@
     });
   </script>
 </head>
-btn
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
     <div class="container-fluid p-3 py-0">
@@ -259,8 +247,8 @@ btn
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                <strong>Por qué donar: </strong><br> GreenPlants es una organizdacion sin fines de lucro, dependemos de aportes voluntarios
-                para continuar nuestra labor de apoyo, también, recibirás un 5% de descuento en tus compras.
+                <strong>Por qué donar: </strong><br> GreenPlants es una organizacion sin fines de lucro, dependemos de aportes voluntarios
+                para continuar nuestra labor, también, recibirás un 5% de descuento en tus compras.
               </div>
             </div>
           </div>
