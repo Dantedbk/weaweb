@@ -18,10 +18,6 @@
   <script>
     $(function () // public static void main (JAVa)
     {
-
-
-
-
       let temp = '';
 
       $(".flagf").click(function () {
@@ -75,6 +71,11 @@
         if (dv.indexOf(caracter) < 0)
           return false;
       })
+
+
+      function wea2() {
+        document.myform.submit();
+      }
 
 
       $('#frmDatos').submit(function (evento) {
@@ -255,6 +256,7 @@
           </div>
         </div>
 
+
       </div>
       <div class="col-sm">
         <div class="accordion  w-75 " id="accordionExample">
@@ -285,65 +287,60 @@
               data-bs-parent="#accordionExample">
               <div class="accordion-body">
 
-                <div class="container ">
-                  <div class="row">
-                    <div class="col-sm ">
-                      <div class="row mb-2">
-                        <div class="col-md-6">
-                          <select class="form-select  tipo1">
-                            <option value="0"> Tipo tarjeta </option>
-                            <option value="1">Crédito</option>
-                            <option value="2">Débito</option>
-                          </select>
-                        </div>
-                        <div class="col-md-6">
-                          <select class="form-select tipo1">
-                            <option value="0">Monto</option>
-                            <option value="1">$2.000</option>
-                            <option value="2">$5.000</option>
-                            <option value="3">$15.000</option>
-                          </select>
-                        </div>
+                <div class="container p-0">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-5 pb-3">
+                        <select class="form-select tipo1">
+                          <option value="0">Monto</option>
+                          <option value="1">$2.000</option>
+                          <option value="2">$5.000</option>
+                          <option value="3">$15.000</option>
+                        </select>
                       </div>
 
-                      <div class="row mb-2 ">
-                        <div class="col-md-3">
-                          N°Tarjeta
-                        </div>
-                        <div class="col-md-8 ">
-                          <input type="text" name="txtNtarjeta" class="txtNtarjeta form-control tipo1"
-                            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="8"
-                            placeholder="Ej: 1234-5678-9101-1213""
-                            title=" Ingrese el nro de rut">
-                        </div>
+                      <div class="col-md-5 pb-3">
+                        <select class="form-select  tipo1">
+                          <option value="0"> Tipo tarjeta </option>
+                          <option value="1">Crédito</option>
+                          <option value="2">Débito</option>
+                        </select>
                       </div>
-                      <div class="row mb-2">
-                        <div class="col-md-3">
-                          Venc.
+
+                      <div class="row pt-2 px-2">
+                        N°Tarjeta
+                        <div class="col-md-7 ">
+                          <input type="text" name="txtRut" class="txtRut form-control tipo1" maxlength="8"
+                            placeholder="Ej: 1234-5678-9101-1213" title="Ingrese el nro de rut">
                         </div>
-                        <div class="col-md-9">
-                          <input type="text" name="txtVenc" class="txtVenc form-control formLetras tipo1 w-50"
-                            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="4" placeholder="Ej: 03/02"
-                            title="Ingrese su nombre">
-                        </div>
+
                       </div>
-                      <div class="row mb-2 ">
-                        <div class="col-md-3">
-                          CVV
-                        </div>
-                        <div class="col-md-6 ">
-                          <input type="text" name="txtCVV " class="txtCVV form-control formLetras tipo1 w-50"
-                            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="3" placeholder="Ej: 123">
-                        </div>
-                        <div class="row mb-2 ">
-                          <div class="col-md-5 pt-3 mx-0">
-                            <button type="button" class="btn tipo1 "
-                              style="border-color: rgba(48, 83, 8, 0.821);">Donar</button>
-                          </div>
-                        </div>
+                      <div class="row pt-2 px-2"></div>
+                      Venc.
+                      <div class="col-md-7 w-50 offset-1">
+                        <input type="date" name="txtVencimiento" class="txtVencimiento form-control tipo1"
+                          title="Ingrese la fecha de vencimiento">
                       </div>
                     </div>
 
+                    <div class="row pt-2 px-2">
+                      CVV
+                      <div class="col-md-7 offset-1">
+                        <input type="text" name="txtCVV " class="txtCVV form-control tipo1"
+                          placeholder="Ej: 123" title="Ingrese su cvv">
+                      </div>
+                    </div>
+
+                </div>
+
+                <input type="submit">
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+         
 </body>
 
 </html>
