@@ -19,6 +19,7 @@
     $(function () // public static void main (JAVa)
     {
 
+      var win = 0
       let temp = '';
 
       $(".flagf").click(function () {
@@ -56,6 +57,7 @@
         }
         else if (temp == ''){
           alert('registro exitoso')
+          win = 1
         }
 
       });
@@ -77,6 +79,33 @@
         if (dv.indexOf(caracter) < 0)
           return false;
       })
+
+
+
+$(".flagd").click(function(){
+
+if (!$(".txtNtarjeta").val()) {
+  temp += 'N° tarjeta, ';
+}
+if (!$(".txtVenc").val()) {
+  temp += 'fecha vencimiento, ';
+}
+if (!$(".txtCVV").val()) {
+  temp += 'CVV, ';
+}
+
+if (temp != '') {
+  alert('los siguientes campos son invalidos:\n' + temp)
+  temp = '';
+}
+else if (win == 0){
+  alert('registro incompleto')
+}
+else if(temp == ''){
+  alert("donacion registrada")
+}
+
+})
 
 
     });
@@ -289,14 +318,14 @@
                     <div class="col-sm ">
                       <div class="row mb-2">
                         <div class="col-md-6">
-                          <select class="form-select  tipo1">
+                          <select class="form-select tipo1 form2">
                             <option value="0"> Tipo tarjeta </option>
                             <option value="1">Crédito</option>
                             <option value="2">Débito</option>
                           </select>
                         </div>
                         <div class="col-md-6">
-                          <select class="form-select tipo1">
+                          <select class="form-select tipo1 form1">
                             <option value="0">Monto</option>
                             <option value="1">$2.000</option>
                             <option value="2">$5.000</option>
@@ -336,8 +365,8 @@
                         </div>
                         <div class="row mb-2 ">
                           <div class="col-md-5 pt-3 mx-0">
-                            <button type="button" class="btn tipo1 "
-                              style="border-color: rgba(48, 83, 8, 0.821);">Donar</button>
+                            <button type="button" class="btn tipo1 flagd" style="border-color: rgba(48, 83, 8, 0.821);">Donar</button>
+                            
                           </div>
                         </div>
                       </div>
