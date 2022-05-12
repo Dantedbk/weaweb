@@ -19,18 +19,14 @@
     $(function () // public static void main (JAVa)
     {
 
-
-
-
       let temp = '';
 
       $(".flagf").click(function () {
         let correo = document.getElementById("txtCorreo").value;
-        let caracteres = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let caracteres = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
         if (!$(".txtRut").val() || $(".txtRut").val().length < 7 || !$(".txtDV").val()) {
           temp += 'rut, ';
-          $(".txtRut").focus();
         }
         if (!$(".txtNombre").val()) {
           temp += 'nombre, ';
@@ -48,12 +44,18 @@
           temp += 'direccion, ';
         }
         if (!$(".txtNacimiento").val()) {
-          temp += 'fecha cumpleaños ';
+          temp += 'fecha cumpleaños, ';
+        }
+        if (!document.getElementById('checkbox-1').checked) {
+          temp += 'terminos y condiciones';
         }
 
         if (temp != '') {
           alert('los siguientes campos son invalidos:\n' + temp)
           temp = '';
+        }
+        else if (temp == ''){
+          alert('registro exitoso')
         }
 
       });
@@ -77,15 +79,6 @@
       })
 
 
-      $('#frmDatos').submit(function (evento) {
-        let opcion = $('select option:selected').val();
-
-        if (opcion != 0) {
-          alert(opcion)
-
-        } else {
-        }
-      });
     });
 
 
@@ -237,17 +230,23 @@
           <div class="col-12 col-md-7">
             <input type="date" name="txtNacimiento" class="txtNacimiento form-control"
               style="background-color: rgba(121, 210, 69, 0.118);" title="Ingrese la fecha de nacimiento">
+              <input id="checkbox-1" class="checkbox-custom px-0 mx-0" name="checkbox-1" type="checkbox">
+              <label for="checkbox-1" class="checkbox-custom-label ">Acepto Terminos y condiciones</label>
           </div>
+          
         </div>
 
         <div class="row">
           <div class="col-md-2 offset-md-2 px-1">
             Opciones
           </div>
+          
           <div class="col-md-7">
 
-            <button type="button" class="btn tipo1" style="border-color: rgba(48, 83, 8, 0.821);">Apoyar</button>
-            <button type="button" class="btn tipo1 flagf" style="border-color: rgba(48, 83, 8, 0.821);">Aceptar</button>
+            <button type="button" class="btn tipo1" data-bs-toggle="collapse" 
+            data-bs-target="#collapseTwo"style="border-color: rgba(48, 83, 8, 0.821);">Contribuir</button>
+
+            <button type="button" class="btn tipo1 flagf float-end" style="border-color: rgba(48, 83, 8, 0.821);">Aceptar</button>
 
             <input type="submit" name="btnLimpiar" class="btn d-flex float-end mx-2 tipo1"
               style="border-color: rgba(48, 83, 8, 0.821);" title="Limpia el formulario de información que este escrita"
@@ -311,8 +310,8 @@
                           N°Tarjeta
                         </div>
                         <div class="col-md-8 ">
-                          <input type="text" name="txtNtarjeta" class="txtNtarjeta form-control tipo1"
-                            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="8"
+                          <input type="text" name="txtNtarjeta" class="txtNtarjeta form-control txtrut tipo1"
+                            style="background-color: rgba(121, 210, 69, 0.118);" maxlength="16"
                             placeholder="Ej: 1234-5678-9101-1213""
                             title=" Ingrese el nro de rut">
                         </div>
@@ -322,7 +321,7 @@
                           Venc.
                         </div>
                         <div class="col-md-9">
-                          <input type="text" name="txtVenc" class="txtVenc form-control formLetras tipo1 w-50"
+                          <input type="text" name="txtVenc" class="txtVenc form-control txtrut tipo1 w-50"
                             style="background-color: rgba(121, 210, 69, 0.118);" maxlength="4" placeholder="Ej: 03/02"
                             title="Ingrese su nombre">
                         </div>
@@ -332,7 +331,7 @@
                           CVV
                         </div>
                         <div class="col-md-6 ">
-                          <input type="text" name="txtCVV " class="txtCVV form-control formLetras tipo1 w-50"
+                          <input type="text" name="txtCVV " class="txtCVV form-control txtrut tipo1 w-50"
                             style="background-color: rgba(121, 210, 69, 0.118);" maxlength="3" placeholder="Ej: 123">
                         </div>
                         <div class="row mb-2 ">
@@ -343,6 +342,8 @@
                         </div>
                       </div>
                     </div>
+
+                    
 
 </body>
 

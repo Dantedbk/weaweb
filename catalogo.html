@@ -18,12 +18,9 @@
   <script>
 
 
-var dolar = 0
+  var dolar = 0
     $.getJSON('https://mindicador.cl/api', function (data) {
       var dailyIndicators = data;
-      $("<p/>", {
-        html: 'El valor actual de la UF es $' + dailyIndicators.dolar.valor
-      }).appendTo("body");
       dolar = dailyIndicators.dolar.valor
     }).fail(function () {
       console.log('Error al consumir la API!');
@@ -36,18 +33,18 @@ var dolar = 0
       for (var i = 0; i < precios.length; i++) {
         var precio = precios[i].innerHTML;
         if (flag % 2 == 0) {
-          temp = precio * dolar
+          temp = precio * dolar  
           precios[i].innerHTML = temp.toFixed(0);
-          document.getElementById("switch").innerHTML = 'CLP';
+          document.getElementById("switch").innerHTML = 'cambiar a USD';
         }
         else {
           temp = precio * 1 / dolar
           precios[i].innerHTML = temp.toFixed(2)
-          document.getElementById("switch").innerHTML = 'USD';
+          document.getElementById("switch").innerHTML = 'cambiar a CLP';
         }
-
       }
     }
+
   </script>
 
 </head>
@@ -76,9 +73,10 @@ var dolar = 0
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-          <li class="nav-item btn tipo1 ">
-            <a class="nav-link stretched-link" id="switch" onclick="updatep()"> <br> cambiar a dólar</a>
+          <li class="nav-item ">
+            <a class="nav-link btn tipo1 mx-1 my-1" id="switch" onclick="updatep()"> cambiar a USD</a>
           </li>
+
           </li>
           <div class="d-flex flex-column">
             <li class="nav-item btn tipo1">
@@ -149,7 +147,7 @@ var dolar = 0
               <h class="py-0 mb-0 mt-0" style="font-size:20px;font-weight: 400;">Marca: Plantus</h>
               <div class="h1 mb-3 mt-2">
                 <img src="img/plant-svgrepo-com (2).svg" class="text-center w-50 mt-0 ">
-                <a href="producto.html" class="stretched-link"></a>
+                <a href="producto2.html" class="stretched-link"></a>
               </div>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 At veniam voluptas provident rem sequi? Ab?</p>
@@ -171,7 +169,7 @@ var dolar = 0
               <h class="py-0 mb-0 mt-0" style="font-size:20px;font-weight: 400;">Marca: Plantus</h>
               <div class="h1 mb-3 mt-2">
                 <img src="img/plant-svgrepo-com (7).svg" class="text-center w-50 mt-0 " alt="...">
-                <a href="producto.html" class="stretched-link"></a>
+                <a href="producto3.html" class="stretched-link"></a>
               </div>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 At veniam voluptas provident rem sequi? Ab?</p>
